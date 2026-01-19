@@ -1,9 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+0xMemo is an onchain guestbook app built with Next.js, Wagmi, and a simple Solidity contract.
 
-## Getting Started
+## Requirements
 
-First, run the development server:
+- Node.js 18+
+- Foundry (for contract deployment/testing)
 
+## Setup
+
+Copy the env template and fill in your values:
+
+```bash
+cp .env.example .env.local
+```
+
+Required variables:
+
+- `NEXT_PUBLIC_MEMO_CONTRACT_ADDRESS`: deployed Memo contract address.
+- `SEPOLIA_RPC_URL`: RPC for Sepolia (deploy only).
+- `PRIVATE_KEY`: deployer private key (deploy only).
+
+## Run the app
+
+From repo root:
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Deploy the contract (Sepolia)
+
+From `0xMemo`:
+
+```bash
+cd 0xMemo
+forge test
+forge script script/Memo.s.sol:MemoScript --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast
+```
+
+Copy the deployed address into `NEXT_PUBLIC_MEMO_CONTRACT_ADDRESS` in `.env.local`, then restart the dev server.
+
+## Notes
+
+- The app reads/writes messages via Wagmi hooks.
+- Messages store text, author address, and timestamp onchain.
 ```bash
 npm run dev
 # or

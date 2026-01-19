@@ -9,6 +9,7 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+.codex/*
 
 # testing
 /coverage
@@ -32,6 +33,12 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+
+# foundry
+/0xMemo/out/
+/0xMemo/cache/
+/0xMemo/broadcast/
+/0xMemo/coverage/
 
 # vercel
 .vercel
