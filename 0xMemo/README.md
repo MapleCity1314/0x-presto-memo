@@ -48,7 +48,7 @@ $ anvil
 ### Deploy
 
 ```shell
-$ forge script script/Memo.s.sol:MemoScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+$ forge script script/Memo.s.sol:MemoScript --rpc-url <your_rpc_url> --private-key <your_private_key> --broadcast
 ```
 
 ### Cast

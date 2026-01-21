@@ -10,7 +10,7 @@
 Copy the env template and fill in your values:
 
 ```bash
-cp .env.example .env.local
+cp env.example .env.local
 ```
 
 Required variables:
