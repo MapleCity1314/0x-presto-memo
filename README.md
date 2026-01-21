@@ -37,7 +37,7 @@ From `0xMemo`:
 ```bash
 cd 0xMemo
 forge test
-forge script script/Memo.s.sol:MemoScript --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast
+forge script script/Memo.s.sol:MemoScript --rpc-url "$SEPOLIA_RPC_URL" --private-key "$PRIVATE_KEY" --broadcast
 ```
 
 Copy the deployed address into `NEXT_PUBLIC_MEMO_CONTRACT_ADDRESS` in `.env.local`, then restart the dev server.
